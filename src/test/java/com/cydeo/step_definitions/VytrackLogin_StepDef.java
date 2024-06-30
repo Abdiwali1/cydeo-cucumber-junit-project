@@ -6,6 +6,7 @@ import com.cydeo.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 public class VytrackLogin_StepDef {
 
@@ -31,6 +32,7 @@ public class VytrackLogin_StepDef {
     @Then("user should be able to login")
     public void user_should_be_able_to_login() {
 
+        Assert.assertEquals("Title verification is failed!","Dashboard",Driver.getDriver().getTitle());
     }
 
 }
