@@ -34,6 +34,7 @@ Feature:Users should be able to login
     Then user enters the sales manager information
 
 
+   @vytracksceo
   Scenario Outline: Login with invalid credential
     When the user login with "<username>","<password>"
     Then the user should not be able to log in
