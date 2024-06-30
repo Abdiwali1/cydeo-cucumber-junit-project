@@ -26,7 +26,8 @@ public class VytrackLogin_StepDef {
 //        vytrackLoginPage.passwordInput.sendKeys(ConfigurationReader.getProperty("driver_password"));
 //        vytrackLoginPage.loginBtn.click();
 
-        vytrackLoginPage.login();
+     //   vytrackLoginPage.login();
+        vytrackLoginPage.login(ConfigurationReader.getProperty("driver_username"),ConfigurationReader.getProperty("driver_password"));
 
     }
 
@@ -47,5 +48,14 @@ public class VytrackLogin_StepDef {
     public void user_enters_the_store_manager_information() {
         vytrackLoginPage.login(ConfigurationReader.getProperty("store_manager_username"),ConfigurationReader.getProperty("store_manager_password"));
     }
+
+
+    @When("user enters the {string} information")
+    public void userEntersTheInformation(String userType) {
+
+     vytrackLoginPage.login(userType);
+
+    }
+
 
 }

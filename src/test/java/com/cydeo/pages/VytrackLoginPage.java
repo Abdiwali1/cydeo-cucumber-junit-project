@@ -34,4 +34,12 @@ public class VytrackLoginPage {
             loginBtn.click();
       }
 
+      public void login(String userType){ //userType= "sales manager"
+
+            userType= userType.replace(" ","_");
+            usernameInput.sendKeys(ConfigurationReader.getProperty(userType+"_username"));
+            passwordInput.sendKeys(ConfigurationReader.getProperty(userType+"_password"));
+            loginBtn.click();
+      }
+
 }
