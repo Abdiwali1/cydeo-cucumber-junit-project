@@ -18,7 +18,7 @@ public class Hooks {
         System.out.println("---> @Before: RUNNING BEFORE EACH SCENARIO");
     }
 
-    //@Before (value = "@login", order = 2 )
+   // @Before (value = "@db", order = 2 )
     public void login_scenario_before(){
         System.out.println("---> @Before: RUNNING BEFORE EACH SCENARIO");
     }
