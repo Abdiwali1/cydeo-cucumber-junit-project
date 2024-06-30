@@ -1,6 +1,7 @@
 package com.cydeo.step_definitions;
 
 import com.cydeo.pages.VytrackDashboardPage;
+import com.cydeo.utilities.BrowserUtils;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
@@ -15,6 +16,7 @@ public class VytrackDashboard_StepDef {
     @Then("user should be able to see following modules")
     public void user_should_be_able_to_see_following_modules(List<String> expectedModules) {
 
+        BrowserUtils.waitForTitleContains("Dashboard");
         List<String> actualModules = new ArrayList<>();
 
         for (WebElement eachModule : vytrackDashboardPage.allModules) {
