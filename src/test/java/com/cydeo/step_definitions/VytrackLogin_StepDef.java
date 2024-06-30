@@ -1,12 +1,14 @@
 package com.cydeo.step_definitions;
 
 import com.cydeo.pages.VytrackLoginPage;
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.ConfigurationReader;
 import com.cydeo.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class VytrackLogin_StepDef {
 
@@ -31,8 +33,19 @@ public class VytrackLogin_StepDef {
 
     @Then("user should be able to login")
     public void user_should_be_able_to_login() {
-
+        BrowserUtils.waitForTitleContains("Dashboard");
         Assert.assertEquals("Title verification is failed!","Dashboard",Driver.getDriver().getTitle());
+    }
+
+    @When("user enters the sales manager information")
+    public void user_enters_the_sales_manager_information() {
+        vytrackLoginPage.login(ConfigurationReader.getProperty("sales_manager_username"),ConfigurationReader.getProperty("sales_manager_password"));
+    }
+
+
+    @When("user enters the store manager information")
+    public void user_enters_the_store_manager_information() {
+        vytrackLoginPage.login(ConfigurationReader.getProperty("store_manager_username"),ConfigurationReader.getProperty("store_manager_password"));
     }
 
 }

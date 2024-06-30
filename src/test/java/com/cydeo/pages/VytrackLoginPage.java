@@ -28,4 +28,10 @@ public class VytrackLoginPage {
             loginBtn.click();
       }
 
+      public void login(String username,String password){
+            usernameInput.sendKeys(username);
+            passwordInput.sendKeys(password);
+            loginBtn.click();
+      }
+
 }
