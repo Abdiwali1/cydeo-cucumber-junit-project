@@ -42,4 +42,12 @@ public class VytrackLoginPage {
             loginBtn.click();
       }
 
+
+      public void envLogin(){
+         String username = System.getenv("STORE_MANAGER_USERNAME");
+         String password = System.getenv("STORE_MANAGER_PASSWORD");
+
+         login(username,password);
+      }
+
 }

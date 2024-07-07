@@ -70,6 +70,12 @@ public class VytrackLogin_StepDef {
         Assert.assertTrue("Title verification is failed!",Driver.getDriver().getTitle().equals("Login"));
 
     }
+
+
+    @When("user enters the store manager information from the environment")
+    public void userEntersTheStoreManagerInformationFromTheEnvironment() {
+      vytrackLoginPage.envLogin();
     }
+}
 
 
